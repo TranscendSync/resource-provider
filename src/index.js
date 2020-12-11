@@ -9,7 +9,7 @@ class SyncHandler {
    * @param {String} options.apiKey Transcend Sync Api Key
    * @param {String} options.siteKey Transcend Sync Site Key
    */
-  constructor({ apiKey, siteKey }) {
+  constructor({ apiKey = '', siteKey = '' }) {
     this.apiKey = apiKey
     this.session = Axios.create({
       baseURL: TARGET,
@@ -46,6 +46,37 @@ class SyncHandler {
         resolve(payload)
       } catch (e) {
         return reject(e)
+      }
+    })
+  }
+
+  /**
+   * Fetch Origin Configuration
+   */
+
+  fetchOriginConfig() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const options = {
+          url: 'deploy/origin',
+          method: 'POST'
+        }
+
+        const { data } = await this.session(options)
+
+        const { success, resources } = data
+
+        if (!success) {
+          throw new Error('Unable to fetch origin config')
+        }
+
+        const payloadBuffer = Buffer.from(resources, 'base64')
+        const payloadString = payloadBuffer.toString('utf-8')
+        const payload = JSON.parse(payloadString)
+
+        resolve(payload)
+      } catch (e) {
+        reject(e)
       }
     })
   }

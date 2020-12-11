@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Provide essential configuration for Transcend Sync Resources",
   "main": "index.js",
+  "private": false,
   "directories": {
     "test": "tests"
   },
@@ -16,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/TranscendSync/resource-provider.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "David Ibia <david.ibia@boxmarshall.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TranscendSync/resource-provider/issues"
   },

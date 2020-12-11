@@ -1,0 +1,25 @@
+{
+  "name": "resource-provider",
+  "version": "0.0.1",
+  "description": "Provide essential configuration for Transcend Sync Resources",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "axios": "^0.21.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TranscendSync/resource-provider.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TranscendSync/resource-provider/issues"
+  },
+  "homepage": "https://github.com/TranscendSync/resource-provider#readme"
+}
